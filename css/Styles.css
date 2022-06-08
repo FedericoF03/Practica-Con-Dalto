@@ -69,3 +69,7 @@ section {
     display: fixed;
     background-color: azure;
 }
+
+.box__ice-cream:focus, .box__ice-cream:hover {
+background-color: aqua;
+}
