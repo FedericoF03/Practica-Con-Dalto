@@ -1,9 +1,10 @@
 'use strict';
 
-let cash = document.getElementById("amountInput")
-let button = document.getElementById("amountButton")
-let input = document.querySelector(".carga")
-input.hidden = true
+const cash = document.getElementById("amountInput")
+const button = document.getElementById("amountButton")
+const input = document.querySelector(".carga")
+const large = document.querySelectorAll(".box__ice-cream")
+input.hidden = true 
 
 let calculate = () => {
     let value = Number(cash.value)
@@ -46,3 +47,15 @@ let calculate = () => {
 }
 
 button.addEventListener("click", calculate)
+let clickRecognize = function(dato) {
+    let valueIceCream = dato.split("$")
+    valueIceCream = parseFloat(valueIceCream[1])
+    cash.value = valueIceCream 
+}
+
+for (let index = 0; index < large.length; index++) {
+    let div = large[index]
+    let text = div.innerText
+    div.tabIndex = index
+    div.addEventListener("click", () => clickRecognize(text)) 
+}
