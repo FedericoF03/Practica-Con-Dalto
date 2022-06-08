@@ -65,3 +65,7 @@ section {
     border: 1px solid black;
 }
 
+.carga {
+    display: fixed;
+    background-color: azure;
+}
